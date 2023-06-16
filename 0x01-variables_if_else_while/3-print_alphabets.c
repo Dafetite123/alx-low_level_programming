@@ -14,7 +14,10 @@ int main(void)
 		putchar(ch);
 	}
 
-	for (cha = 'A'; cha <= 'Z'; cha++)                                                   {                                                                                         putchar(cha);                                                              }
+	for (cha = 'A'; cha <= 'Z'; cha++)
+	{
+		putchar(cha);
+	}
 	putchar('\n');
 
 	return (0);
