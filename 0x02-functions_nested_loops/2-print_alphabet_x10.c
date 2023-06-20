@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_alphabet_x10(void) function - function
+ * print_alphabet_x10 - function
  * Return: 0 for succes
  */
 
