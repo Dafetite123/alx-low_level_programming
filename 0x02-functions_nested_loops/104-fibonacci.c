@@ -7,14 +7,15 @@
 
 void fibonacci(int n)
 {
-	int i, first = 1, second = 2;
+	unsigned long int i, first = 1, second = 2, next;
 
-	printf("%d, %d, ", first, second);
+	printf("%lu, %lu, ", first, second);
 
 	for (i = 3; i <= n; i++)
 	{
-		int next = first + second;
-		printf("%d", next);
+		next = first + second;
+
+		printf("%lu", next);
 
 		if (i != n)
 		{
@@ -31,10 +32,10 @@ void fibonacci(int n)
  * main - function
  * Return: 0
  */
-int main (void)
+int main(void)
 {
-	int n = 98;
+	unsigned long int n = 98;
 
 	fibonacci(n);
-	return 0;
+	return (0);
 }
