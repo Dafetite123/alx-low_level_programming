@@ -1,36 +1,40 @@
 #include <stdio.h>
 
+/**
+ * fibonacci - fibonacci
+ * @n: input
+ */
 
-
-void printFibonacci(int n)
+void fibonacci(int n)
 {
-	int first = 1;
-	int second = 2;
+	int i, first = 1, second = 2;
 
-	// Print the first two Fibonacci numbers
 	printf("%d, %d, ", first, second);
 
-	// Generate and print the next Fibonacci numbers
-	for (int i = 3; i <= n; i++)
+	for (i = 3; i <= n; i++)
 	{
 		int next = first + second;
 		printf("%d", next);
 
-		// Add a comma and space after each number (except the last one)
 		if (i != n)
 		{
 			printf(", ");
 		}
 
-		// Update variables for the next iteration
 		first = second;
 		second = next;
 	} printf("\n");
 }
 
-int main()
+
+/**
+ * main - function
+ * Return: 0
+ */
+int main (void)
 {
 	int n = 98;
-	printFibonacci(n);
+
+	fibonacci(n);
 	return 0;
 }
