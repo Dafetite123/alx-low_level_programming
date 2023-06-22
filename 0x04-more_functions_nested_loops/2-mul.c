@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 /**
- * _isupper - function
- * @c: input
- * Return: 0 for succes
+ * mul - function
+ * @a: input2
+ * @b: input1
+ * Return: res
  */
 int mul(int a, int b)
 {
