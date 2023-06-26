@@ -16,7 +16,9 @@ void print_rev(char *s)
 		s++;
 	}
 
-	for (ind = cnt; ind >= 0; ind--, s--)
+	printf("cnt=%d\n", cnt);
+
+	for (ind = cnt - 1; ind > 0; ind--, s--)
 	{
 		_putchar(*s);
 	}
