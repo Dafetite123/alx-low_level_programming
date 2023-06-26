@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_rev - imprime en reversa
- * @s: string
+ * print_rev - function
+ * @s: ptr
  * return: 0
  */
 void print_rev(char *s)
 {
-	int cnt = 0, ind1;
+	char *ns = s;
+	int cnt = 0, ind;
 
 	while (*s)
 	{
@@ -15,11 +16,9 @@ void print_rev(char *s)
 		s++;
 	}
 
-	s--;
-
-	for (ind1 = cnt; ind1 > 0; ind1--, s--)
+	for (ind = cnt - 1; ind >= 0; ind--)
 	{
-		putchar(*s);
+		putchar(ns[ind]);
 	}
 	putchar('\n');
 }
