@@ -2,7 +2,7 @@
 
 /**
  * puts2 - function
- * Return: 0 for succes
+ * @str: ptr
  */
 
 void puts2(char *str)
