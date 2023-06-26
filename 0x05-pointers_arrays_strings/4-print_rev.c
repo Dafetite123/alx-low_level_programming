@@ -18,6 +18,8 @@ void print_rev(char *s)
 
 	/* printf("cnt=%d\n", cnt); */
 
+	s--;
+
 	for (ind = cnt; ind > 0; ind--, s--)
 	{
 		_putchar(*s);
