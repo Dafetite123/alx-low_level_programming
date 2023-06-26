@@ -1,23 +1,26 @@
 #include "main.h"
 
 /**
- * rev_string - function
- * @s: Input string
+ * rev_string - Function
+ * @s: ptr
  */
 
 void rev_string(char *s)
 {
-	char temp;
+	char tmp;
 	int cnt = 0, ind;
 
-	while (s[cnt] != '\0')
+	while (*s)
+	{
 		cnt++;
-
+		s++;
+	}
+	
 	for (ind = 0; ind < cnt; ind++)
 	{
 		cnt--;
-		temp = s[ind];
+		tmp = s[ind];
 		s[ind] = s[cnt];
-		s[cnt] = temp;
+		s[cnt] = tmp;
 	}
 }
