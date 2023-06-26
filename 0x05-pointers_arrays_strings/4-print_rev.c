@@ -20,9 +20,10 @@ void print_rev(char *s)
 
 	s--;
 
-	for (ind = cnt; ind > 0; ind--, s--)
+	for (ind = cnt; ind > 0; ind--)
 	{
 		_putchar(*s);
+		s--;
 	}
 	_putchar('\n');
 }
