@@ -16,7 +16,7 @@ void print_rev(char *s)
 		s++;
 	}
 
-	printf("cnt=%d\n", cnt);
+	/* printf("cnt=%d\n", cnt); */
 
 	for (ind = cnt - 1; ind > 0; ind--, s--)
 	{
