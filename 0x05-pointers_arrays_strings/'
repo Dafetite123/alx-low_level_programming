@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+/**
+ * puts_half - function
+ * @str: ptt
+ */
+
+void puts_half(char *str)
+{
+	int cnt = 0, half, ind;
+	char *nstr = str;
+
+	while (*str)
+	{
+		cnt++;
+		str++;
+	}
+
+	printf("cnt=%d\n", cnt);
+
+	if (cnt % 2 == 1)
+		half = (cnt - 1) / 2;
+	else
+		half = cnt / 2;
+
+	printf("half=%d\n", half);
+
+	for (ind = half; ind < cnt; ind++, nstr++)
+	{
+		/* printf("%d", ind); */
+		printf("%c", *nstr);
+		/* putchar(*str); */
+	}
+	putchar('\n');
+}
