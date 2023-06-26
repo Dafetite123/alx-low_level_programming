@@ -16,7 +16,7 @@ void puts_half(char *str)
 		str++;
 	}
 
-	half = (cnt % 2 == 1) ? ((cnt -1) / 2) : (cnt / 2);
+	half = (cnt % 2 == 1) ? ((cnt - 1) / 2) : (cnt / 2);
 
 	for (ind = half; nstr[ind] != '\0'; ind++)
 		putchar(nstr[ind]);
