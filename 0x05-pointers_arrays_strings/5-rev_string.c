@@ -18,7 +18,7 @@ void rev_string(char *s)
 
 	newM = malloc((cnt - 1) * sizeof(char));
 	if (newM == NULL)
-		printf("");
+		s = "";
 
 	for (ind = 0, dec = cnt - 1; dec >= 0; dec--, ind++)
 		newM[ind] = cpy[dec];
