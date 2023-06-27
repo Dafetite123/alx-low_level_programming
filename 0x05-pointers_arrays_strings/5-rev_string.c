@@ -16,9 +16,9 @@ void rev_string(char *s)
 		tmp++;
 	}
 
-	newM = malloc((cnt-1) * sizeof(char));
+	newM = malloc((cnt - 1) * sizeof(char));
 	if (newM == NULL)
-		printf("Memory allocation failed\n");
+		printf("");
 
 	for (ind = 0, dec = cnt - 1; dec >= 0; dec--, ind++)
 		newM[ind] = cpy[dec];
