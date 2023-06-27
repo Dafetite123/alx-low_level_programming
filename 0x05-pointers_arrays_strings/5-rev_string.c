@@ -7,20 +7,22 @@
 
 void rev_string(char *s)
 {
-	char tmp;
-	int cnt = 0, ind;
+	char *tmp = s, *cpy = s, *newM;
+	int cnt = 0, dec, ind;
 
-	while (*s)
+	while (*tmp)
 	{
 		cnt++;
-		s++;
+		tmp++;
 	}
-	
+
+	newM = malloc((cnt-1) * sizeof(char));
+	if (newM == NULL)
+		printf("Memory allocation failed\n");
+
+	for (ind = 0, dec = cnt - 1; dec >= 0; dec--, ind++)
+		newM[ind] = cpy[dec];
+
 	for (ind = 0; ind < cnt; ind++)
-	{
-		cnt--;
-		tmp = s[ind];
-		s[ind] = s[cnt];
-		s[cnt] = tmp;
-	}
+		s[ind] = newM[ind];
 }
