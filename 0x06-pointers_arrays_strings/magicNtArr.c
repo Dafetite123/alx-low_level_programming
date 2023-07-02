@@ -6,63 +6,27 @@ int main(void)
   int k = 27;
   int g;
   int h;
-  int a[5];
   int *p;
 
-  a[2] = 1024;
   p = &n;
-  /*
-   * write your line of code here...
-   * Remember:
-   * - you are not allowed to use a
-   * - you are not allowed to modify p
-   * - only one statement
-   * - you are not allowed to code anything else than this line of code
-   */
+
+  putchar('\n');
   printf("initial value of n = %d and at %p\n", n, &n);
+  putchar('\n');
   printf("initial value of k = %d and at %p\n", k, &k);
   *(p + 1) = 80;
-  printf("new value of k = %d and at %p\n", k, &k);
+  printf("new value of k = %d same as *(p + 1) = %d and at %p\n", k, *(p + 1), &k);
+  p[1] = 52;
+  printf("newest value of k = %d same as p[1] = %d and at %p\n", k, p[1], &p[1]);
   putchar('\n');
+  p[2] = 17;
+  p[3] = 25;
+  printf("the value of g = %d same as p[2] = %d and at %p\n", g, p[2], &p[2]);
   putchar('\n');
+  printf("the value of h = %d same as p[3] = %d and at %p\n", h, p[3], &p[3]);
   putchar('\n');
+  printf(">>> int variable g is declared immediatly after the variable n, making it possible for n to access it right from outside its scope.\n\nNote: that this doesn't matter even if g has been initialized before n accesses it.\nHowever, this won't be the case if it was an array.\n");
   putchar('\n');
-  putchar('\n');
-  printf(">>> int variable g is declared between variable n and array a. However, soon as its address is printed or it's initialized with a value the program crashes. Hence, nothing must come between variable n and array a so that the pointer pointing to n can leave its scope and access the array a.\n");
-  putchar('\n');
-  printf(">>>Note: just because a variable is declared doesn't mean;a space is created. A space is created in memory at the instance of usage(i.e when initialzed, derefernced or its address is demanded) and destroyed after.\n");
-  putchar('\n');
-  printf(">>>We cannot initialize or demand the addresses of the spaces *(p + 1) and *(p + 2) because they are part of the variable n's scope(4bytes). This would cause this program to crash as well.\n");
-  *(p + 0) = 44;
-  *(p + 3) = 39;
-  *(p + 4) = 98;
-  *(p + 5) = 73;
-  *(p + 6) = 11;
-  *(p + 7) = 56;
-  putchar('\n');
-  printf("initial value of n = %d and at %p\n", n, &n);
-  //printf("g is at %p\n", &g);
-  putchar('\n');
-  printf("Pointer is at %p\n", p);
-  printf("pointer *(p + 0) is at %p\n", &*(p + 0));
-  putchar('\n');
-  printf("pointer *(p + 1) is at %p\n", &*(p + 1));
-  printf("pointer *(p + 2) is at %p\n", &*(p + 2));
-  putchar('\n');
-  printf("Arr[0] pointer *(p + 3) is at %p\n", &*(p + 3));
-  printf("Arr[1] Pointer *(p + 4) is at %p\n", &*(p + 4));
-  printf("Arr[2] pointer *(p + 5) is at %p\n", &*(p + 5));
-  printf("Arr[3] pointer *(p + 6) is at %p\n", &*(p + 6));
-  printf("Arr[4] pointer *(p + 7) is at %p\n", &*(p + 7));
-  putchar('\n');
-  printf("n = %d and at %p\n", n, &n);
-  putchar('\n');
-  printf("a[0] = %d and at %p\n", a[0], &a[0]);
-  printf("a[1] = %d and at %p\n", a[1], &a[1]);
-  printf("a[2] = %d and at %p\n", a[2], &a[2]);
-  printf("a[3] = %d and at %p\n", a[3], &a[3]);
-  printf("a[4] = %d and at %p\n", a[4], &a[4]);
-  /* ...so that this prints 98\n */
-  //printf("a[2] = %d\n", a[2]);
+  printf(">>> Note: just because a variable is declared doesn't mean;a space is created. A space is created in memory at the instant of usage(i.e when initialzed, derefernced or its address is demanded) and destroyed after.\n\n");
   return (0);
 }
