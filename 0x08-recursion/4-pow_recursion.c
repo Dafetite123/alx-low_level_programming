@@ -2,7 +2,8 @@
 
 /**
  * _pow_recursion - function
- * @n: int
+ * @x: int
+ * @y: int
  * Return: int
  */
 
