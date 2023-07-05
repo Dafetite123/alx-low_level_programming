@@ -4,6 +4,7 @@
 /**
  * _strlen_recursion - function
  * @s: ptr
+ * Return: int
  */
 
 int _strlen_recursion(char *s)
