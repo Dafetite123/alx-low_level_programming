@@ -19,6 +19,6 @@ void _print_rev_recursion(char *s)
 		/* i++; */
 		/* printf("What next!\n"); */
 	}
-	/* else
-		_putchar('\n'); */
+	/* else */
+		/* _putchar('\n'); */
 }
