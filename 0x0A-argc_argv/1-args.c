@@ -2,6 +2,8 @@
 
 /**
  * main - function
+ * @argc: num of args
+ * @argv: array of args
  * Return: 0 for succes
  */
 
