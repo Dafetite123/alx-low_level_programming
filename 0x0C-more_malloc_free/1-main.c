@@ -15,13 +15,13 @@ int main(void)
     printf("%s\n", concat);
     a = string_nconcat("Best ", "School", 4);
     printf("%s\n", a);
-    b = string_nconcat("", "Hello", 12);
+    b = string_nconcat("", "Hello1", 12);
     printf("%s\n", b);
-    c = string_nconcat("Hello", "", 12);
+    c = string_nconcat("Hello2", "", 12);
     printf("%s\n", c);
-    d = string_nconcat("Hello", NULL, 12);
+    d = string_nconcat("Hello3", NULL, 12);
     printf("%s\n", d);
-    e = string_nconcat(NULL, "Hello", 0);
+    e = string_nconcat(NULL, "Hello4", 0);
     printf("%s\n", e);
     f = string_nconcat(NULL, NULL, 10);
     printf("%s\n", f);

@@ -1,42 +1,46 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
- * string_nconcat - function
- * @n: u-int
+ * *string_nconcat - function
  * @s1: ptr1
  * @s2: ptr2
- * Return: ptr
+ * @n: num
+ *
+ * Return: pointer to the resulting string
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	unsigned int i, m, j = 0, k = 0;
+	char *s;
+	unsigned int i = 0, j = 0, r1 = 0, r2 = 0;
 
-	if (s1 == NULL)
-		s1 = "";
+	while (s1 && s1[r1])
+		r1++;
 
-	if (s2 == NULL)
-		s2 = "";
+	while (s2 && s2[r2])
+		r2++;
 
-	while (s1[j])
-		j++;
+	if (n < r2)
+		s = malloc(sizeof(char) * (r1 + n + 1));
+	else
+		s = malloc(sizeof(char) * (r1 + r2 + 1));
 
-	while (s2[k])
-		k++;
-
-	ptr = malloc((j + k) * sizeof(char));
-	if (ptr == NULL)
+	if (!s)
 		return (NULL);
 
-	for (i = 0 ; i < j ; i++)
-		ptr[i] = s1[i];
+	while (i < r1)
+	{
+		s[i] = s1[i];
+		i++;
+	}
 
-	for (m = 0 ; m < n ; m++)
-		ptr[i + m] = s2[m];
+	while (n < r2 && i < (r1 + n))
+		s[i++] = s2[j++];
 
-	ptr[i + m] = '\0';
+	while (n >= r2 && i < (r1 + r2))
+		s[i++] = s2[j++];
 
-	return (ptr);
+	s[i] = '\0';
+
+	return (s);
 }
