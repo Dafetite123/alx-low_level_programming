@@ -11,33 +11,20 @@ int main(void)
 
   a[2] = 1024;
   p = &n;
-  /*
-   * write your line of code here...
-   * Remember:
-   * - you are not allowed to use a
-   * - you are not allowed to modify p
-   * - only one statement
-   * - you are not allowed to code anything else than this line of code
-   */
-  putchar('\n');
-  printf(">>> int variable g is declared between variable n and array a. However, soon as its address is printed or it's initialized with a value the program crashes. Hence, nothing must come between variable n and array a so that the pointer pointing to n can leave its scope and access the array a.\n");
-  putchar('\n');
-  printf(">>>Note: just because a variable is declared doesn't mean;a space is created. A space is created in memory at the instance of usage(i.e when initialzed, derefernced or its address is demanded) and destroyed after.\n");
-  putchar('\n');
-  printf(">>>We cannot initialize or demand the addresses of the spaces *(p + 1) and *(p + 2) because they are part of the variable n's scope(4bytes). This would cause this program to crash as well.\n");
+
   *(p + 0) = 44;
+  *(p + 1) = 921;
+  *(p + 2) = 274;
   *(p + 3) = 39;
   *(p + 4) = 98;
   *(p + 5) = 73;
-  *(p + 6) = 11;
-  *(p + 7) = 56;
-  putchar('\n');
-  printf("initial value of n = %d and at %p\n", n, &n);
-  //printf("g is at %p\n", &g);
-  putchar('\n');
-  printf("Pointer is at %p\n", p);
+  *(p + 6) = 11;                                                                          *(p + 7) = 56;                                                                          putchar('\n');
+
+  printf("initial value of n = %d and at %p\n", n, &n);                                                                                                                           g = 87;
+  printf("g has a value of %d\n", g);                                                     printf("g is at %p\n", &g);
+                                                                                          putchar('\n');                                                                          printf("Pointer is at %p\n", p);
   printf("pointer *(p + 0) is at %p\n", &*(p + 0));
-  putchar('\n');
+  putchar('\n');                                                                          printf("pointer *(p + 1) has value %d\n", *(p + 1));                                    printf("pointer *(p + 2) has value %d\n", *(p + 2));
   printf("pointer *(p + 1) is at %p\n", &*(p + 1));
   printf("pointer *(p + 2) is at %p\n", &*(p + 2));
   putchar('\n');
