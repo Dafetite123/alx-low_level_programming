@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# Author: Promise Nwhator
 def is_palindrome(n):
     return str(n) == str(n)[::-1]
 
