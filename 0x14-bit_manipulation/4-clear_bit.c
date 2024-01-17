@@ -1,23 +1,17 @@
 #include "main.h"
 
 /**
- * clear_bit - this will sets the val of thr given bit
- * to the val 0
- * @n: points to the number to swap
- * @index: index of the bit we wish t clear to clear
- *
- * Return: success is 1 and sfailure is -1
+ * clear_bit - sets the value of a bit to 0 at a given index
+ * @index: index of the bit starting from 0
+ * @n: pointer to a number
+ * Return: 1 | -1(if an error occured)
  */
 
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	if (!(index > 63))
-	{
-		*n = (~(1UL << index) & *n);
-	}
-	else
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
 
-
+	*n &= ~(1 << index);
 	return (1);
 }

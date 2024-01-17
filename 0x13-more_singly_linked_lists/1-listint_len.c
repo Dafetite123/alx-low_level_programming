@@ -1,24 +1,20 @@
 #include "lists.h"
 
 /**
- * listint_len - this program will return all elements of a linked list
- * @vari:  the linked list of the
- * Return: the number of nodes encountered during the operation
+ * listint_len - returns the number of elements in a linked list
+ * @h: pointer to head
+ * Return: number of elements
  */
-size_t listint_len(const listint_t *vari)
+
+size_t listint_len(const listint_t *h)
 {
+	size_t  num = 0;
 
-	size_t pntNumb = 0;
-
-	while (vari)
+	while (h != 0)
 	{
-		pntNumb++;
-		vari = (*vari).next;
+		num++;
+
+		h = h->next;
 	}
-
-
-
-
-
-	return (pntNumb);
+	return (num);
 }

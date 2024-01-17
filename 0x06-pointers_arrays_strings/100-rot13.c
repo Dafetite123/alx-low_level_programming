@@ -1,28 +1,28 @@
+#include "main.h"
 #include <stdio.h>
-
 /**
- * rot13 - function
- * @ch: char ptr
- * Return: ptr
+ * rot13 - encode using rot13
+ * @s: variable
+ * Return: Always 0 (Success)
  */
-
-char *rot13(char *ch)
+char *rot13(char *s)
 {
-	int i = 0, j;
-	char *let = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char *num = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i = 0, i2 = 0;
+	char alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char alpha2[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	while (ch[i])
+	while (*(s + i) != 0)
 	{
-		for (j = 0; let[j] != '\0'; j++)
+		for (i2 = 0; i2 <= 52; i2++)
 		{
-			if (ch[i] == let[j])
+			if (*(s + i) == alpha[i2])
 			{
-				ch[i] = num[j];
+				*(s + i) = alpha2[i2];
 				break;
 			}
 		}
-		i++;
+				i++;
 	}
-	return (ch);
+		return (s);
 }
+

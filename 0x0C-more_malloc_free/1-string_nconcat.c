@@ -1,46 +1,39 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
- * *string_nconcat - function
- * @s1: ptr1
- * @s2: ptr2
- * @n: num
- *
- * Return: pointer to the resulting string
+ * string_nconcat - a function that concatenates two strings.
+ * @s1: pointer to first string
+ * @s2: pointer to second string
+ * @n: unsigned interger
+ * Return: NULL if fail else pointer to a new allocated space
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int i = 0, j = 0, r1 = 0, r2 = 0;
+	char *str_cat;
+	unsigned int len = n, i;
 
-	while (s1 && s1[r1])
-		r1++;
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	for (i = 0; s1[i]; i++)
+		len++;
+	str_cat = malloc(sizeof(char) * (len + 1));
 
-	while (s2 && s2[r2])
-		r2++;
-
-	if (n < r2)
-		s = malloc(sizeof(char) * (r1 + n + 1));
-	else
-		s = malloc(sizeof(char) * (r1 + r2 + 1));
-
-	if (!s)
+	if (str_cat == NULL)
 		return (NULL);
+	len = 0;
 
-	while (i < r1)
-	{
-		s[i] = s1[i];
-		i++;
-	}
+	for (i = 0; s1[i]; i++)
+		str_cat[len++] = s1[i];
 
-	while (n < r2 && i < (r1 + n))
-		s[i++] = s2[j++];
+	for (i = 0; s2[i] && i < n; i++)
+		str_cat[len++] = s2[i];
 
-	while (n >= r2 && i < (r1 + r2))
-		s[i++] = s2[j++];
+	str_cat[len] = '\0';
 
-	s[i] = '\0';
-
-	return (s);
+	return (str_cat);
 }

@@ -1,1 +1,1 @@
-0x03-debugging
+this directory contains alx tasks on the debugging project.

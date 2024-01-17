@@ -1,19 +1,18 @@
 #include <stdio.h>
 
 /**
- * main - function
- * Return: 0 for succes
+ * main - prints all single digit numbers of base 10
+ *
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	int ch;
+	int n;
 
-	for (ch = 0; ch <= 9; ch++)
+	for (n = 0 ; n < 10 ; n++)
 	{
-		putchar(ch + '0');
+		putchar(n + '0');
 	}
 	putchar('\n');
-
 	return (0);
 }

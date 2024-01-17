@@ -1,27 +1,24 @@
 #include "main.h"
 
 /**
- * print_binary - thid progrm will printout the
- * binary equivalent of a decimal number
- * @n: pepresents the number to print in binary form
+ * print_binary - prints the binary representation of a number
+ * @n: unsigned long int
+ * Return: not specified
  */
+
 void print_binary(unsigned long int n)
 {
-	int nuM, counteR = 0;
-	unsigned long int currVar;
+	/* check if n is zero, if n is zero, binary representation is also zero*/
 
-	for (nuM = 63; nuM >= 0; nuM--)
+	if ((n >> 1) == 0 && n == 0)
 	{
-		currVar = n >> nuM;
-
-		if (currVar & 1)
-		{
-			_putchar('1');
-			counteR++;
-		}
-		else if (counteR)
-			_putchar('0');
-	}
-	if (!counteR)
 		_putchar('0');
+		return;
+	}
+
+	/*check if n still has some binary digits to print*/
+
+	if (n >> 1 != 0)
+		print_binary(n >> 1);
+	_putchar((n & 1) + '0');
 }

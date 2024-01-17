@@ -1,28 +1,24 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
- * rev_string - Function
- * @s: ptr
+ * rev_string - A program that reverses string
+ * @s: pointer to string
+ * Return: 0
  */
-
 void rev_string(char *s)
 {
-	char *tmp = s, *cpy = s, *newM;
-	int cnt = 0, dec, ind;
+	int i = 0;
+	int len = 0;
+	char temp;
 
-	while (*tmp)
+	while (s[i++])
 	{
-		cnt++;
-		tmp++;
+		len++;
 	}
-
-	newM = malloc((cnt - 1) * sizeof(char));
-	if (newM == NULL)
-		s = "";
-
-	for (ind = 0, dec = cnt - 1; dec >= 0; dec--, ind++)
-		newM[ind] = cpy[dec];
-
-	for (ind = 0; ind < cnt; ind++)
-		s[ind] = newM[ind];
+	for (i = len - 1; i >= len / 2; i--)
+	{
+		temp = s[i];
+		s[i] = s[len - i - 1];
+		s[len - i - 1] = temp;
+	}
 }

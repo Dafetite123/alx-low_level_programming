@@ -1,22 +1,19 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * _puts_recursion - function
- * @s: ptr
+ * _puts_recursion - function that prints a string
+ * @s: string
+ *
+ * Return: string
  */
 
 void _puts_recursion(char *s)
 {
-	int i = 0;
-
-	if (s[i])
+	if (*s)
 	{
-		_putchar(s[i]);
+		_putchar(*s);
 		_puts_recursion(s + 1);
-		/* i++; */
-		/* printf("What next!\n"); */
 	}
 	else
-		_putchar('\n');
+	_putchar('\n');
 }

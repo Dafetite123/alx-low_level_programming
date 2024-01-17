@@ -1,25 +1,18 @@
 #include "lists.h"
 
-
 /**
- * free_listint - this function will frees a linked list(de-allocate it)
- * @head: the listint_t is the list to be freed(de-allocate)
+ * free_listint - a function that frees the list
+ * @head: pointer to head
+ * Return: not specified
  */
-
-
 
 void free_listint(listint_t *head)
 {
+	listint_t *node;
 
-
-	listint_t *tmpory;
-
-
-
-	while (head)
+	while ((node = head) != NULL)
 	{
-		tmpory = (*head).next;
-		free(head);
-		head = tmpory;
+		head = head->next;
+		free(node);
 	}
 }

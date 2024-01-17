@@ -1,55 +1,27 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
- * _strpbrk - function
- * @s: ptr
- * @accept: char
- * Return: u-int
+ * *_strpbrk - a function that searches a string for any set of bytes
+ * @s: string to be searched
+ * @accept: bytes to search for
+ *
+ * Return: 0
  */
 
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j, k = 0, l, m, n = 0;
-	char *res;
+	int x, y;
 
-	for (i = 0 ; accept[i] != '\0' ; i++)
+	for (x = 0; s[x] != '\0'; x++)
 	{
-		printf("for accept value= %c\n", accept[i]);
-		printf("for k value = %d\n", k);
-
-		if (k)
-			break;
-		for (j = 0 ; s[j] != '\0' ; j++)
+		for (y = 0; accept[y] != '\0'; y++)
 		{
-			printf("for s value = %c\n", s[j]);
-			if (accept[i] == s[j])
+			if (s[x] == accept[y])
 			{
-				k = i;
-				printf("i = %d and k = %d\n", i, k);
-				break;
+			return (s + x);
 			}
 		}
 	}
-
-	printf("for i value = %d\n", i);
-
-	while (s[n] != '\0')
-		n++;
-
-	m = n - i;
-
-	printf("for m value = %d\n", m);
-
-	res = malloc(m * sizeof(char));
-	if (res == NULL)
-		printf("Memory allocation failed\n");
-
-	for (l = 0 ; l < m ; j++, l++)
-	{
-		res[l] = s[j];
-		printf("for res value= %c\n", res[l]);
-	}
-
-	return (res);
+	return (NULL);
 }

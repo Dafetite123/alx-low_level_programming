@@ -1,20 +1,20 @@
 #include <stdio.h>
 
 /**
- * main - function
- * @argc: num of args
- * @argv: array of args
- * Return: 0 for succes
+ * main - entry point
+ * Description: prints all command line arguements
+ * @argc: the count of arguements
+ * @argv: the array of arguements
+ * Return: 0
  */
 
 int main(int argc, char *argv[])
 {
-	int i = 0;
+	int i;
 
-	for (; i < argc ; i++)
+	for (i = 0; i < argc; i++)
 	{
 		printf("%s\n", argv[i]);
 	}
-	
 	return (0);
 }

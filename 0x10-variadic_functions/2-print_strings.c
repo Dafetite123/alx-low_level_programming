@@ -1,39 +1,32 @@
-#include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include "variadic_functions.h"
 
 /**
- * print_strings - Prints strings, followed by a new line.
- * @separator: The string to be printed between strings.
- * @n: The number of strings passed to the function.
- * @...: A variable number of strings to be printed.
- *
- * Description: If separator is NULL, it is not printed.
- *              If one of the strings if NULL, (nil) is printed instead.
- */
+  * print_strings - a function that prints a string
+  * @separator: the string to be printed btwn the strings
+  * @n: number of strings passed to the function
+  * Return: if separator is NULL don't print, if one string is NULL print nil
+  */
+
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list strings;
-	char *str;
-	unsigned int index;
+	unsigned int i;
+	va_list args;
+	char *string;
 
-	va_start(strings, n);
+	va_start(args, n);
 
-	for (index = 0; index < n; index++)
+	for (i = 0; i < n; i++)
 	{
-		str = va_arg(strings, char *);
+		string = va_arg(args, char *);
+		printf("%s", string != NULL ? string : "(nil)");
 
-		if (str == NULL)
-			printf("(nil)");
-		else
-			printf("%s", str);
-
-		if (index != (n - 1) && separator != NULL)
+		if (i < n - 1 && separator != NULL)
+		{
 			printf("%s", separator);
+		}
 	}
-
+	va_end(args);
 	printf("\n");
-
-	va_end(strings);
 }
-

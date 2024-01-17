@@ -1,42 +1,46 @@
 #include <stdio.h>
-#include "main.h"
-#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 /**
- * main - function
- * @argc: num of args
- * @argv: array of args
- * Return: 0 for succes
+ * main - entry point
+ * Description: adds 2 positive numbers
+ * @argc: arguement count
+ * @argv: argument array
+ * Return: 0
  */
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 0, j, k = 1;
+	int sum;
+	int num;
+	int arg_index;
+	int char_index;
 
-	if (argc > 1)
+	sum = 0;
+	if (argc == 1)
 	{
-		for (j = 1 ; j < argc ; j++)
+		printf("0\n");
+		return (0);
+	}
+	for (arg_index = 1; arg_index < argc; arg_index++)
+	{
+		for (char_index = 0; argv[arg_index][char_index] != '\0'; char_index++)
 		{
-			/* printf("argv[%d] = %c\n", j, *argv[j]); */
-			if (!(*argv[j] >= '0' && *argv[j] <= '9'))
+			if (!isdigit(argv[arg_index][char_index]))
 			{
 				printf("Error\n");
-				k = 0;
-				break;
+				return (1);
 			}
 		}
-	}
-
-	if (argc > 2 && k == 1)
-	{
-		for (i = 1 ; i < argc ; i++)
+		num = atoi(argv[arg_index]);
+		if (num < 0)
 		{
-			sum += _atoi(argv[i]);
+			printf("Error\n");
+			return (1);
 		}
-		printf("%d\n", sum);
+		sum += num;
 	}
-	else if (argc == 1)
-		printf("0\n");
-
+	printf("%d\n", sum);
 	return (0);
 }

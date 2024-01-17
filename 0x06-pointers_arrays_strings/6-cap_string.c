@@ -1,62 +1,31 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * cap_string - function
- * @ch: char low
- * Return: char up
+ * cap_string - capitalizes all words in a string
+ * @s: string
+ * Return: address of s
  */
-char assignCh (char cha);
-char condition (int j, char *c);
-char *cap_string(char *ch)
+char *cap_string(char *s)
 {
-	int i = 0;
-	/* char con; */
+	int i = 0, j;
+	char a[] = " \t\n,;.!?\"(){}";
 
-	while (ch[i])
+	while (*(s + i))
 	{
-		ch[i] = condition (i, ch);
-		/* ch[i] = con; */
+		if (*(s + i) >= 'a' && *(s + i) <= 'z')
+		{
+			if (i == 0)
+				*(s + i) -= 'a' - 'A';
+			else
+			{
+				for (j = 0; j <= 12; j++)
+				{
+					if (a[j] == *(s + i - 1))
+						*(s + i) -= 'a' - 'A';
+				}
+			}
+		}
 		i++;
 	}
-
-	return (ch);
-}
-
-/**
- * condition - this function checks the condition
- * @cha: input
- * @j: index
- * Return: int
- */
-char condition (int j, char *c)
-{
-	char cRet = c[j], cIn;
-
-	if (c[j] == ',' || c[j] == ';' || c[j] == '.' || c[j] == '!'
-		|| c[j] == '?' || c[j] == '"' || c[j] == '(' ||
-		c[j] == ')' || c[j] == '{' || c[j] == '}' ||
-		c[j] == ' ' || c[j] == '\n' || c[j] == '\t')
-	{
-		j += 1;
-		cIn = c[j];
-		cRet = assignCh (cIn);
-	}
-
-	return (cRet);
-}
-
-/**
- * assignCh - this function checks and converts to uppercase
- * @cha: input
- * @j: index
- * Return: int
- */
-char assignCh (char cha)
-{
-	if (cha >= 'a' && cha <= 'z')
-	{
-		cha -= 32;
-	}
-
-	return (cha);
+	return (s);
 }

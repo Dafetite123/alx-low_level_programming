@@ -1,31 +1,28 @@
 #include "main.h"
 
 /**
- * binary_to_uint - this program will convert a bin or base2 number
- * to unsigned integer
- * @b: the string containing bin or base2 number
- *
- * Return: thew convertion
+ * binary_to_uint -converts a binary number to an unsigned int
+ * @b: points to a string of 0 and 1 chars
+ * Return: the converted number
  */
+
 unsigned int binary_to_uint(const char *b)
 {
-	int nuM;
-	unsigned int decimalvall = 0;
+	unsigned int i = 0;
+	unsigned int result = 0;
 
-	if (!b)
+	if (b == NULL)
 		return (0);
-	else
+
+	while (b[i] != '\0')
 	{
-		for (nuM = 0; b[nuM]; nuM++)
-		{
-			if (b[nuM] < '0' || b[nuM] > '1')
-				return (0);
-			decimalvall = 2 * decimalvall + (b[nuM] - '0');
-		}
+		if (b[i] != '0' && b[i] != '1')
+			return (0);
+		result <<= 1;
+
+		if (b[i] & 1)
+			result += 1;
+		i += 1;
 	}
-
-
-
-
-	return (decimalvall);
+	return (result);
 }

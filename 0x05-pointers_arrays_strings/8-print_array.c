@@ -1,29 +1,23 @@
+#include "main.h"
 #include <stdio.h>
-
 /**
- * print_array - function
- * @a: ptr
- * @n: number
+ * print_array - Prints contents of array
+ * @a: pointer
+ * @n: integer
+ * Return: 0
  */
-
 void print_array(int *a, int n)
 {
-	int cnt = 0, ind, *b = a;
+	int i;
 
-	while (*a)
+	for (i = 0; i < n; i++)
 	{
-		cnt++;
-		a++;
-	}
-
-	if (cnt >= n)
-	{
-		for (ind = 0; ind < n; ind++)
+		printf("%d", a[i]);
+		if (i < n - 1)
 		{
-			if (ind > 0 && ind < n)
-				printf(", ");
-			printf("%d", b[ind]);
+			printf(", ");
 		}
-		putchar('\n');
 	}
+	printf("\n");
 }
+

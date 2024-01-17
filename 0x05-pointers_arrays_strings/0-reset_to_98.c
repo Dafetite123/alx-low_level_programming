@@ -1,8 +1,9 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * reset_to_98 - function
- * @n: ptr variable
+ * reset_to_98 - function declaration
+ * @n: pointer interger
+ * Return: void
  */
 
 void reset_to_98(int *n)

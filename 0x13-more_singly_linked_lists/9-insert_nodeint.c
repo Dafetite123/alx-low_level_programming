@@ -1,55 +1,44 @@
 #include "lists.h"
 
-
 /**
- * insert_nodeint_at_index - this program will insert a new node into
- * the linked list at a specific index position
- * @head: this points to the first node in the list during execution
- * @index: index where the new node is added
- * @n: represents the data to insert in the new node during execution
- * Return: either pointer to the newly created node or NULL
+ * insert_nodeint_at_index -function that inserts a new node
+ * @idx: index of the list where the new node should be added
+ * @head: pointer to the head
+ * @n: data to be added
+ * Return: address of new node, or NULL on failure
  */
 
-
-
-listint_t *insert_nodeint_at_index(listint_t **head, unsigned int index, int n)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
+	unsigned int i;
+	listint_t *newnode, *temp;
 
-	listint_t *tmpory = *head;
-	listint_t *allocSpace;
-	unsigned int count;
+	newnode = (listint_t *)malloc(sizeof(listint_t));
 
-	allocSpace = malloc(sizeof(listint_t));
-	if (allocSpace || head)
-	{
-		(*allocSpace).n = n;
-		(*allocSpace).next = NULL;
-	}
-	else
+	if (newnode == NULL)
 		return (NULL);
 
+	newnode->n = n;
 
-	if (!(index == 0))
+	if (idx == 0)
 	{
-		for (count = 0; tmpory && count < index; count++)
-		{
-			if (!(count == index - 1))
-				tmpory = (*tmpory).next;
-			else
-			{
-				(*allocSpace).next = tmpory->next;
-				(*tmpory).next = allocSpace;
-				return (allocSpace);
-			}
-		}
+		newnode->next = *head;
+		*head = newnode;
+		return (newnode);
 	}
 
-	else
-	{
-		(*allocSpace).next = *head;
-		*head = allocSpace;
-		return (allocSpace);
-	}
+	temp = *head;
 
-	return (NULL);
+	for (i = 0; i < idx - 1 && temp != NULL; i++)
+		temp = temp->next;
+
+	if (temp == NULL)
+	{
+		free(newnode);
+		return (NULL);
+	}
+	newnode->next = temp->next;
+	temp->next = newnode;
+	return (newnode);
 }
+

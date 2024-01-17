@@ -1,25 +1,20 @@
 #include "lists.h"
 
 /**
- * print_listint - this program will printout all elements of a linked list
- * @vari: the linked list of the type - listint_t to print-
- *
- * Return: the number of nodes encountered during the operation
+ * print_listint - prints all the elements of a list
+ * @h: pointer to head
+ * Return: the number of nodes
  */
-size_t print_listint(const listint_t *vari)
+
+size_t print_listint(const listint_t *h)
 {
+	int count = 0;
 
-	size_t pntNumb = 0;
-
-	while (vari)
+	while (h)
 	{
-		printf("%d\n", (*vari).n);
-		pntNumb++;
-		vari = (*vari).next;
+		printf("%d\n", h->n);
+		h = h->next;
+		count++;
 	}
-
-
-
-	return (pntNumb);
+	return (count);
 }
-

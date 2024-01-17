@@ -1,28 +1,21 @@
 #include "lists.h"
 
 /**
- * free_dlistint - Frees a dlistint_t list.
- * @head: Pointer to the head of the list.
+ * free_dlistint - that frees a dlistint_t list
+ * @head: pointer to the head of the list
  *
- * Description: This function frees the memory allocated for each node
- * in a doubly linked list.
+ * Return: nothing
  */
 
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *temp;
+	dlistint_t *tmp;
 
-	if (head != NULL)
+	while (head != NULL)
 	{
-		while (head->prev != NULL)
-		{
-			head = head->prev;
-		}
-	}
-	while ((temp = head) != NULL)
-	{
-		/* Move to the next node */
+		tmp = head;
 		head = head->next;
-		free(temp);
+
+		free(tmp);
 	}
 }

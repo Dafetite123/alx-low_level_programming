@@ -1,1 +1,1 @@
-0x04-more_functions_nested_loops
+ this directory contains tasks for alx "more functions and more nested loops" project

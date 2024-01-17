@@ -1,22 +1,23 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * print_alphabet_x10 - function
- * Return: 0 for succes
+ * print_alphabet_x10 - prints x10 the alphabet in lowercase
+ *
+ * Return: void
  */
 
 void print_alphabet_x10(void)
 {
-	int num;
-	char ch;
+	char b;
+	int i = 0;
 
-	for (num = 0; num <= 9; num++)
+	while (i <= 9)
 	{
-		for (ch = 'a'; ch <= 'z'; ch++)
-		{
-			_putchar(ch);
-		}
-		_putchar('\n');
+	for (b = 'a'; b <= 'z'; b++)
+	{
+	_putchar(b);
+	}
+	_putchar('\n');
+	i++;
 	}
 }

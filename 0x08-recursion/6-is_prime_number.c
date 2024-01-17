@@ -1,31 +1,67 @@
 #include "main.h"
 
-int actual_prime(int n, int i);
+/**
+ * divisible - function declaration
+ * @my_num: number to test
+ * @divisor: the divisor
+ * Return: 0 or 1
+ */
+
+int divisible(int my_num, int divisor);
 
 /**
- * is_prime_number - says if an integer is a prime number or not
- * @n: number to evaluate
- * * Return: 1 if n is a prime number, 0 if not
+ * is_prime_number - function definition
+ * @n: number to test
+ * Return: 0 or 1
  */
-int is_prime_number(int n)
+
+int is_prime_number(int n);
+
+/**
+ * divisible - function definition
+ * @my_num: the number to test
+ * @divisor: the divisor to use
+ * Description: checks the divisibility of a number
+ * Return: 0 for divisible, 1 for not
+ */
+
+int divisible(int my_num, int divisor)
 {
-	if (n <= 1)
+	if (my_num % divisor == 0)
+	{
 		return (0);
-	return (actual_prime(n, n - 1));
+	}
+	else if (divisor == my_num / 2)
+	{
+		return (1);
+	}
+	else
+	{
+		return (divisible(my_num, divisor + 1));
+	}
 }
 
 /**
- * actual_prime - calculates if a number is prime recursively
- * @n: number to evaluate
- * @i: iterator
- *
- * Return: 1 if n is prime, 0 if not
+ * is_prime_number - function definition
+ * @n: the number to be tested
+ * Description: find a prime number
+ * Return: 0 for not prime, 1 for prime
  */
-int actual_prime(int n, int i)
+
+int is_prime_number(int n)
 {
-	if (i == 1)
-		return (1);
-	if (n % i == 0 && i > 0)
+	int divisor = 2;
+
+	if (n <= 1)
+	{
 		return (0);
-	return (actual_prime(n, i - 1));
+	}
+	else if (n >= 2 && n <= 3)
+	{
+		return (1);
+	}
+	else
+	{
+		return (divisible(n, divisor));
+	}
 }

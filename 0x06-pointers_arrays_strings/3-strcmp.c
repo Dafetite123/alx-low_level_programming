@@ -1,27 +1,19 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * _strcmp - function
- * @s1: dest
- * @s2: src
- * Return: a pointer
+ * _strcmp - a function that compares two strings
+ * @s1: input one
+ * @s2: input two
+ * Return: Always 0 (Success)
  */
-
-char *_strcat(char *dest, char *src)
+int _strcmp(char *s1, char *s2)
 {
-	char *d = dest;
-	int i = 0, j = 0;
+	int i;
 
-	while (d[i] != '\0')
-		i++;
-
-	while (src[j] != '\0')
+	for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
 	{
-		dest[i + j] = src[j];
-		j++;
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 	}
-
-	dest[i + j] = '\0';
-
-	return (dest);
+	return (0);
 }

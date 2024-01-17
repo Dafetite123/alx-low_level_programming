@@ -1,24 +1,24 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * main - function
- * Return: 0 for succes
+ * main - returns alphabet in lower case and then in upper case
+ *
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
-	char ch, cha;
-
-	for (ch = 'a'; ch <= 'z'; ch++)
-	{
-		putchar(ch);
-	}
-
-	for (cha = 'A'; cha <= 'Z'; cha++)
-	{
-		putchar(cha);
-	}
-	putchar('\n');
-
-	return (0);
+int ch = 'a';
+int CH = 'A';
+while (ch <= 'z')
+{
+putchar(ch);
+ch++;
+}
+while (CH <= 'Z')
+{
+putchar(CH);
+CH++;
+}
+putchar('\n');
+return (0);
 }

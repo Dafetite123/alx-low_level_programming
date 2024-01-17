@@ -1,1 +1,1 @@
-0x03-debugging
+this directory contains alx task on static libraries project

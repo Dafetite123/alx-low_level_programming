@@ -1,30 +1,33 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * _strspn - function
- * @s: ptr
- * @accept: char
- * Return: u-int
+ * _strspn - a function that gets the length of a prefix substring
+ * @s: string
+ * @accept: prefix substring
+ *
+ * Return: number of bytes
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int index, acc;
-	unsigned int i = 0;
+	unsigned int bytes = 0;
+	int i;
 
-	for (acc = 0 ; accept[acc] != '\0' ; acc++)
+	while (*s)
 	{
-		/* printf("print for the letter %c\n", accept[acc]); */
-		for (index = 0 ; s[index] != '\0' ; index++)
+		for (i = 0; accept[i]; i++)
 		{
-			if (s[index] == accept[acc])
+			if (*s == accept[i])
 			{
-				/* printf("yes it exist %c\n", s[index]); */
-				i++;
+				bytes++;
 				break;
 			}
+			else if (accept[i + 1] == '\0')
+			{
+				return (bytes);
+			}
 		}
-		/* putchar('\n'); */
+		s++;
 	}
-	return (i);
+	return (bytes);
 }

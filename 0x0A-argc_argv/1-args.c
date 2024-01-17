@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 /**
- * main - function
- * @argc: num of args
- * @argv: array of args
- * Return: 0 for succes
+ * main - entry point
+ * Description: prints number of command line arguements
+ * @argc: number of arguements
+ * @argv: array of arguemnts
+ * Return: 0
  */
 
-int main(int argc, __attribute__((unused))char *argv[])
+int main(int argc, char *argv[]__attribute__((unused)))
 {
 	printf("%d\n", argc - 1);
-	
 	return (0);
 }
